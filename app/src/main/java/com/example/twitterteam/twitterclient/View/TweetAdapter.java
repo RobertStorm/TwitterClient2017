@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.twitterteam.twitterclient.Model.Tweet;
@@ -28,6 +29,7 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
     TextView tv_tweetDate;
     TextView tv_tweet_retweets;
     TextView tv_tweet_likes;
+    ImageView iv_userPicture;
 
 
     public TweetAdapter(@NonNull Context context) {
@@ -46,6 +48,7 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
         tv_tweepUserName = (TextView) convertView.findViewById(R.id.tv_tweepUserName);
         tv_tweet_retweets = (TextView) convertView.findViewById(R.id.tv_tweet_retweets);
         tv_tweet_likes = (TextView) convertView.findViewById(R.id.tv_tweet_likes);
+        iv_userPicture = (ImageView) convertView.findViewById(R.id.iv_userPicture);
 
         Tweet tweet = TweetModel.getInstance().getTweets().get(position);
         User user = tweet.getTweep();
@@ -53,9 +56,10 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
         tv_tweet.setText(tweet.getText());
         tv_tweetDate.setText(tweet.getCompressedCreatedAt());
         tv_tweepName.setText(user.getName());
-        tv_tweepUserName.setText("@" + user.getScreenName());
+        tv_tweepUserName.setText(user.getScreenName());
         tv_tweet_retweets.setText("RETWEETS: " + tweet.getRetweets());
         tv_tweet_likes.setText("LIKES: " + tweet.getLikes());
+        iv_userPicture.setImageDrawable(user.getUserImage());
 
         return convertView;
     }
