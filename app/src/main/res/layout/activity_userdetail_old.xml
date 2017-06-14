@@ -38,9 +38,9 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/ll_detail_info_banner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/ll_detail_info_banner"
             android:layout_below="@+id/relativeLayout"
             android:orientation="horizontal">
 
@@ -49,21 +49,20 @@
                 android:layout_height="match_parent"
                 android:gravity="bottom"
                 android:orientation="vertical">
-
                 <TextView
                     android:id="@+id/tv_detail_screenname"
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="14dp"
-                    android:layout_toEndOf="@+id/tv_detail_username_a"
                     android:gravity="right"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
                     android:text="%BoTerHam"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="15dp"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/tv_detail_username_a" />
             </LinearLayout>
 
             <LinearLayout
@@ -204,83 +203,26 @@
         android:background="@android:color/darker_gray"
         android:orientation="horizontal">
 
-
-        <TabHost
-
-            android:id="@+id/tabHost"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+            android:id="@+id/ll_side"
+            android:layout_weight="1"></LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/tv_detail_description"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. " />
 
-                <TabWidget
-                    android:id="@android:id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@android:color/white"></TabWidget>
-
-                <FrameLayout
-                    android:id="@android:id/tabcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:id="@+id/tab1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:id="@+id/ll_side"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@color/colorPrimaryDark"
-                            android:orientation="horizontal"></LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="4">
-
-                            <TextView
-                                android:id="@+id/tv_detail_description"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginStart="5dp"
-                                android:text="Hier komt de beschrijving van de persoon te staan"></TextView>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/tab2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_detail_description2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
-                            android:text="tab 2"></TextView>
-
-                    </LinearLayout>
-                </FrameLayout>
-
-
-            </LinearLayout>
-        </TabHost>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
